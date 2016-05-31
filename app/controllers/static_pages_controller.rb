@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    render text: 'hello, consumer!'
+  end
+  def about
   end
 end
