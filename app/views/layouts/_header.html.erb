@@ -1,8 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "FarmStory", "#", id: "logo" %>
+    <%= link_to "FarmStory", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "サインアップ", signup_path %></li>
         <li><%= link_to "ログイン", "#" %></li>
         <li><%= link_to "カート", "#" %></li>
       </ul>
