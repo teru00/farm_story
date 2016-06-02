@@ -1,10 +1,26 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-defalt">
   <div class="container">
     <%= link_to "FarmStory", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "サインアップ", signup_path %></li>
-
+        <% if logged_in? %>
+          <li><%= link_to "Users", "#" %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown" data-toggle="dropdown">
+              Account<b class="caret"></b>
+            </a>
+            <ul>
+              <li><%= link_to "プロフィール", current_user %></li>
+              <li><%= link_to "設定", "#" %></li>
+              <li class="divider"></li>
+              <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+              <li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "サインアップ", signup_path %></li>
+          <li><%= link_to "カート", "#" %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
