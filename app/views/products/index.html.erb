@@ -9,6 +9,7 @@
 <% end %>
 
 <h1>ALL Vegetables</h1>
+<h2>seach result: <%= @products.count %></h2>
 <ul>
 <% @products.each do |product| %>
 <li><%= link_to product.name, product %></li>
