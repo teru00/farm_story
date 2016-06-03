@@ -1,3 +1,13 @@
+
+<%= search_form_for @q do |f| %>
+  <%# start 特定の文字列で始まる商品名で検索 %>
+  <%= f.label :name_cont, "商品名" %>
+  <%= f.search_field :name_cont %>
+  <br />
+  <%# 検索ボタン %>
+  <%= f.submit %>
+<% end %>
+
 <h1>ALL Vegetables</h1>
 <ul>
 <% @products.each do |product| %>

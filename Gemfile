@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails',        '4.2.2'
+gem 'ransack'
 gem 'carrierwave',   '0.10.0'
 gem 'mini_magick',   '3.8.0'
 gem 'fog',          '1.36.0'

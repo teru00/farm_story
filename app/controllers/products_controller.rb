@@ -1,8 +1,11 @@
 class ProductsController < ApplicationController
   before_action :admin_user, only: [:create, :destroy]
   def index
-    @products = Product.all
+    #@products = Product.all
+    @q = Product.search(params[:q])
+    @products = @q.result(distinct: true)
   end
+  
   def show
     @product = Product.find(params[:id])
   end
