@@ -8,12 +8,15 @@ class ProductsController < ApplicationController
   
   def show
     @product = Product.find(params[:id])
+    @owner = Owner.find(1)
+    @products = @owner.products
   end
   def new
     @product = Product.new
   end
   def create
-    @product = Product.new(product_params)
+    @owner = Owner.find_by(id: params[:product][:owner])
+    @product = @owner.products.build(product_params)
     if @product.save
       redirect_to root_path
     else

@@ -1,0 +1,8 @@
+<h1>Owners#show</h1>
+<p>Find me in app/views/owners/show.html.erb</p>
+<%= @owner.name %>
+<ul>
+<% @products.each do |product| %>
+  <li><%= product.name %></li>
+<% end %>
+</ul>
