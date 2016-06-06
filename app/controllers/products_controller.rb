@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
   def create
-    @owner = Owner.find_by(id: params[:product][:owner])
+    @owner = Owner.find_by(id: product_params_owner)
     @product = @owner.products.build(product_params)
     if @product.save
       redirect_to root_path
@@ -27,6 +27,10 @@ class ProductsController < ApplicationController
   private
     def product_params
       params.require(:product).permit(:name,:content,:price,:picture)
+    end
+    
+    def product_params_owner
+      params.require(:product).permit(:owner)
     end
     
     def admin_user
