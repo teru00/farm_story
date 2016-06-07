@@ -1,5 +1,11 @@
-<ul>
+
 <% @products.each do |product| %>
-<li><%= product.name %></li>
+ <div class="entry">
+    <%= image_tag product.picture_url if product.picture? %>
+    <h3><%= product.name %></h3>
+    <p><%= sanitize product.content %></p>
+    <div class="price_line">
+      <span class="price"><%= product.price %></span>
+    </div>
+  </div>
 <% end %>
-</ul>
