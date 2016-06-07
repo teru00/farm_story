@@ -5,6 +5,14 @@
     </div>
     <nav>
       <ul class="nav navbar-nav navbar-right" >
+        <li><%= link_to "Login", "#" %></li>
+        <li><%= link_to "Cart", "#" %></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right" >
         <% if logged_in? %>
           <% if current_user.admin? %>
             <li><%= link_to "出品する", sellup_path %></li>

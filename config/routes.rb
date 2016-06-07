@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
+  get 'store/index'
   get 'owners/index'
-
   get 'owners/show'
-
   root 'products#index'
   get 'about' => 'static_pages#about'
   resources :users
