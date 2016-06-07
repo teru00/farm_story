@@ -1,0 +1,16 @@
+<h1>Carts#show</h1>
+<p>Find me in app/views/carts/show.html.erb</p>
+
+<ul>
+<% @cart.line_items.each do |item| %>
+<li>
+  price : <%= item.product.price %> | <%= item.product.name %> &times <%= item.quantity %>
+  | Total : <%= item.product.price*item.quantity %>
+</li>
+<% end %>
+</ul>
+<%= link_to "買い物を続ける", store_path %>
+<%= button_to "カートを空にする", @cart, method: :delete,
+  confirm: 'ほんとうに良いですか?' %>
+<%= button_to "Checkout!", "#" %>
+  

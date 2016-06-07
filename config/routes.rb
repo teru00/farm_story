@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'store/index'
+  get 'orders/new'
+
+  get 'carts/show'
+
+  get 'store' => 'store#index'
   get 'owners/index'
   get 'owners/show'
   root 'products#index'
@@ -14,4 +18,7 @@ Rails.application.routes.draw do
   get 'sellup' => 'products#new'
   #owner
   resources :owners, only: [:index, :show]
+  resources :carts, only: [:show, :destroy]
+  resources :line_items, only: [:create]
+  resources :orders, only: [:new, :create]
 end

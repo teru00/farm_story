@@ -6,6 +6,7 @@
     <p><%= sanitize product.content %></p>
     <div class="price_line">
       <span class="price"><%= product.price %></span>
+      <%= button_to 'カートに入れる', line_items_path(product_id: product) %>
     </div>
   </div>
 <% end %>
