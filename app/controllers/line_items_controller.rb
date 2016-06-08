@@ -6,7 +6,7 @@ class LineItemsController < ApplicationController
     if @line_item.save
       redirect_to @line_item.cart
     else
-      render 'new'
+      redirect_to root_path
     end
   end
 end
