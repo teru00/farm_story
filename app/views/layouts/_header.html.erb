@@ -1,16 +1,8 @@
-<header class="navbar navbar-fixed-top navbar-inverse" style="background-color:#90EE90">
+<header class="navbar navbar-inverse">
   <div class="container">
     <div class="nav-header">
      <%= link_to "FarmStory", root_path, id: "logo" %>
     </div>
-    <nav>
-      <ul class="nav navbar-nav navbar-right" >
-        <li><%= link_to "Login", "#" %></li>
-        <li><%= link_to "Cart", "#" %></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="container">
     <nav>
       <ul class="nav navbar-nav navbar-right" >
         <% if logged_in? %>
@@ -22,9 +14,8 @@
           <li><%= link_to "設定", edit_user_path(current_user) %></li>
           <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to "サインアップ", signup_path %></li>
-          <li><%= link_to "ログイン", login_path %></li>
-          <li><a href="#"><span class="glyphicon glyphicon-cart"></span>cart</a></li>
+          <li><%= link_to "ログイン", signup_path %></li>
+          <li><%= link_to "新規登録", login_path %></li>
         <% end %>
       </ul>
     </nav>

@@ -1,8 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 body {
-padding-top: 130px;
+padding-top: 0px;
+}
+.header_top {
+  background-color: green; 
+  border: none;
 }
 section {
   overflow: auto;

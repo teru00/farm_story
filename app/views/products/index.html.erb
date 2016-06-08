@@ -7,9 +7,20 @@
   <%= f.submit %>
 <% end %>
 
-<h1>ALL Vegetables</h1>
+<h2>ALL Vegetables</h2>
 <h2>seach result: <%= @products.count %></h2>
-<ul>
-<% @products.each do |product| %>
-<li><%= link_to product.name, product %></li>
-<% end %>
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag product.picture_url if product.picture? %>
+      <div class="caption">
+        <h3><%= link_to product.name, product %></h3>
+        <p><%= product.content %></p>
+        <p><a href="#" class="btn btn-primary" role="button">+</a> 
+        <a href="#" class="btn btn-default" role="button">-</a></p>
+      </div>
+    </div>
+  </div>
+ <% end %>
+</div>
