@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   resources :owners, only: [:index, :show]
   resources :carts, only: [:show, :destroy]
   resources :line_items, only: [:create]
-  resources :orders, only: [:new, :create]
+  resources :orders
 end

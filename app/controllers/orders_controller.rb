@@ -1,4 +1,10 @@
 class OrdersController < ApplicationController
+  def index
+    @orders = Order.all
+  end
+  def show
+    @order = Order.find(params[:id])
+  end
   def new
     @cart = current_cart
     if @cart.line_items.empty?
@@ -7,7 +13,6 @@ class OrdersController < ApplicationController
     end
     @order = Order.new
   end
-  
   def create
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(current_cart)
@@ -18,6 +23,12 @@ class OrdersController < ApplicationController
     else
       render 'new'
     end
+  end
+  def edit
+  end
+  def update
+  end
+  def destroy
   end
   
   private
