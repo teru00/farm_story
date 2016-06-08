@@ -7,6 +7,7 @@ class CartsController < ApplicationController
     @cart = current_cart
     @cart.destroy
     session[:cart_id] = nil
+    flash[:info] = "カートをカラにしました。"
     redirect_to store_path
   end
 end
