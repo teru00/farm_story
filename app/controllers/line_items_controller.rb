@@ -10,4 +10,11 @@ class LineItemsController < ApplicationController
       redirect_to root_path
     end
   end
+  
+  def destroy
+    @cart = current_cart
+    product = Product.find(params[:id])
+    @cart.sub_product(product.id)
+    redirect_to @cart
+  end
 end

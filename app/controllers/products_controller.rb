@@ -3,8 +3,9 @@ class ProductsController < ApplicationController
   def index
     #@products = Product.all
     #ransack
-    @q = Product.search(params[:q])
-    @products = @q.result(distinct: true)
+    #@q = Product.search(params[:q])
+    #@products = @q.result(distinct: true)
+    @products = Product.paginate(page: params[:page], per_page: 10)
   end
   
   def show

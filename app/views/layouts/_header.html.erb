@@ -1,23 +1,22 @@
-<header class="navbar navbar-inverse">
-  <div class="container">
+<header>
+  <div class="header_top">Here's header_top</div>
+  <nav class="navbar navbar-inverse">
     <div class="nav-header">
      <%= link_to "FarmStory", root_path, id: "logo" %>
     </div>
-    <nav>
-      <ul class="nav navbar-nav navbar-right" >
-        <% if logged_in? %>
-          <% if current_user.admin? %>
-            <li><%= link_to "出品する", sellup_path %></li>
-          <% end %>
-          <li><%= link_to "Users", users_path %></li>
-          <li><%= link_to "プロフィール", current_user %></li>
-          <li><%= link_to "設定", edit_user_path(current_user) %></li>
-          <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "ログイン", signup_path %></li>
-          <li><%= link_to "新規登録", login_path %></li>
+    <ul class="nav navbar-nav navbar-right" >
+      <% if logged_in? %>
+        <% if current_user.admin? %>
+          <li><%= link_to "出品する", sellup_path %></li>
         <% end %>
-      </ul>
-    </nav>
-  </div>
+        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to "プロフィール", current_user %></li>
+        <li><%= link_to "設定", edit_user_path(current_user) %></li>
+        <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "ログイン", login_path %></li>
+        <li><%= link_to "新規登録", signup_path %></li>
+      <% end %>
+    </ul>
+  </nav>
 </header>
