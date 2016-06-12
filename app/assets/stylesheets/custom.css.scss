@@ -7,8 +7,9 @@ padding-top: 0px;
 background: #f0f0f0;
 }
 .header_top {
-  background-color: green; 
+  background-color: skyblue; 
   opacity: 0.5;
+  text-align: center;
 }
 section {
   overflow: auto;
@@ -64,6 +65,14 @@ p {
   &:hover {
   color: gray;
   text-decoration: none;
+  }
+}
+
+.navbar-brand {
+ a {
+   &:hover {
+     text-decoration: none;
+   }
   }
 }
 
