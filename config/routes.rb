@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :products
   get 'sellup' => 'products#new'
   #owner
-  resources :owners, only: [:index, :show]
+  resources :owners, only: [:index, :new, :create, :show]
   resources :carts, only: [:show, :destroy]
   resources :line_items, only: [:create, :destroy]
   resources :orders
