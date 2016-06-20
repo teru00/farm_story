@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   get 'orders/new'
-
   get 'carts/show'
-
   get 'store' => 'store#index'
   get 'owners/index'
   get 'owners/show'
   root 'products#index'
   get 'about' => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
   resources :users
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
