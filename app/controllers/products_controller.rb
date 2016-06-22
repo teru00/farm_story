@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :admin_user, only: [:create, :destroy]
+  
   def index
     #@products = Product.all
     #ransack
@@ -25,6 +26,9 @@ class ProductsController < ApplicationController
     else
       render 'new'
     end
+  end
+  
+  def destroy
   end
   
   private

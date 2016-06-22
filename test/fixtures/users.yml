@@ -3,12 +3,14 @@ terufumi:
   name: Terufumi Example
   email: terufumi@example.com
   password_digest: <%= User.digest('password') %>
+  admin: true
 
 akihisa:
   id: 2
   name: Akihisa Example
   email: akihisa@example.com
   password_digest: <%= User.digest('password') %>
+  admin: false
 
 lana:
   name: Lana Kane
