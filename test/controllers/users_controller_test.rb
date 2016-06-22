@@ -3,8 +3,8 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
   
   def setup
-    @user = user(:terfumi)
-    @user = user(:akihisa)
+    @user = users(:terufumi)
+    @user = users(:akihisa)
   end
   
   test "should get new" do
@@ -14,7 +14,7 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should redirect edit when not logged in" do
     get :edit, id: @user
-    assert_not flush.empty?
+    assert_not flash.empty?
     assert_redirected_to login_url
   end
   

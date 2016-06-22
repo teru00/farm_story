@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'store' => 'store#index'
   get 'owners/index'
   get 'owners/show'
+  get 'static_pages/home'
   root 'products#index'
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'

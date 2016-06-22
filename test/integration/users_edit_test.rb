@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersEditTest < ActionDispatch::IntegrationTest
 
   def setup
-    @user = user(:terufumi)
+    @user = users(:terufumi)
   end
   
   test "unsuccessful edit" do
@@ -14,6 +14,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                                     email: "foo@invalid",
                                     password:              "foo",
                                     password_confirmation: "bar" }
+    assert_not flash.empty?
     assert_template 'users/edit'
   end
   

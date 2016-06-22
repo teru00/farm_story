@@ -6,9 +6,11 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user
+      flash[:success] = "ログインが完了しました。"
       #params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_back_or user
     else
+      flash[:danger] = "ログインできませんでした。"
       render 'new'
     end
   end
